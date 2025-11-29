@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 class FristScreen extends StatelessWidget {
@@ -8,12 +6,13 @@ class FristScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 230, 235, 219),
+
       appBar: AppBar(
         title: const Text('Appointments >'),
         backgroundColor: const Color.fromARGB(255, 19, 3, 241),
-        leading: const Icon(Icons.access_alarm_sharp),
+        leading: const Icon(Icons.menu),
         actions: [
-          BottomAppBar(elevation: 1),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Icon(Icons.search_off),
@@ -26,51 +25,37 @@ class FristScreen extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: const Color.fromARGB(2, 2, 2, 2),
-      body: Stack(
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.topCenter,
-                colors: [
-                  const Color.fromARGB(255, 117, 1, 184),
-                  const Color.fromARGB(95, 179, 19, 27),
-                ],
-              ),
-            ),
+      body: Column(
+        children: [
+          Text(
+            "Wednesday, 22 May 2019",
+            style: TextStyle(height: 5, fontWeight: FontWeight.bold),
           ),
-          ListTile(
-            title: TextButton(
-              onPressed: () {},
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.accessibility,
-                  applyTextScaling: true,
-                  semanticLabel: "HI",
-                  opticalSize: 50,
-                  color: Colors.black,
-                  size: 50,
+
+          Expanded(
+            child: ListView(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.access_alarm),
+                  title: Text("Zidan "),
+                  subtitle: Text("10:30"),
+                  trailing: Icon(Icons.check_box),
                 ),
-              ),
+                ListTile(
+                  leading: Icon(Icons.access_alarm),
+                  title: Text("Ahmed "),
+                  subtitle: Text("11:00"),
+                  trailing: Icon(Icons.check),
+                ),
+                ListTile(
+                  leading: Icon(Icons.access_alarm),
+                  title: Text("Mohamed "),
+                  subtitle: Text("01:20"),
+                  trailing: Icon(Icons.cancel_schedule_send_rounded),
+                ),
+              ],
             ),
           ),
-
-          //Row(mainAxisAlignment: MainAxisAlignment.center),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton.icon(
-                onPressed: () {},
-                label: Icon(Icons.access_alarm),
-                icon: Icon(Icons.add_ic_call_outlined),
-              ),
-            ],
-          ),
-
-          Text("data", softWrap: true),
         ],
       ),
     );
