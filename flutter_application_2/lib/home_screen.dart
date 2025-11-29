@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 class FristScreen extends StatelessWidget {
@@ -22,6 +24,53 @@ class FristScreen extends StatelessWidget {
               Shadow(color: Colors.black, offset: Offset(1, 1), blurRadius: 6),
             ],
           ),
+        ],
+      ),
+      backgroundColor: const Color.fromARGB(2, 2, 2, 2),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.topCenter,
+                colors: [
+                  const Color.fromARGB(255, 117, 1, 184),
+                  const Color.fromARGB(95, 179, 19, 27),
+                ],
+              ),
+            ),
+          ),
+          ListTile(
+            title: TextButton(
+              onPressed: () {},
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.accessibility,
+                  applyTextScaling: true,
+                  semanticLabel: "HI",
+                  opticalSize: 50,
+                  color: Colors.black,
+                  size: 50,
+                ),
+              ),
+            ),
+          ),
+
+          //Row(mainAxisAlignment: MainAxisAlignment.center),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextButton.icon(
+                onPressed: () {},
+                label: Icon(Icons.access_alarm),
+                icon: Icon(Icons.add_ic_call_outlined),
+              ),
+            ],
+          ),
+
+          Text("data", softWrap: true),
         ],
       ),
     );

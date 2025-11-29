@@ -3,5 +3,4 @@ import 'package:flutter_application_2/home_screen.dart';
 
 void main() {
   runApp(MaterialApp(home: FristScreen()));
-  print("object");
 }
